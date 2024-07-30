@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import store from '../store';
 import Home from '../views/index.vue';
-
+import ProductItem from '../views/products/itemdetail.vue';
+import Itemdetail from '../views/products/itemdetail.vue';
 // Vue.use(VueRouter);
 // import { createApp } from 'vue';
 // const app = createApp();
@@ -12,6 +13,7 @@ const routes = [
     // Agregar rutas acá
     { path: '/', name: 'Home', component: Home },
     { path: '/prueba', name: 'Prueba', component: () => import('../views/prueba/prueba.vue') },
+    
     //
     // Estas rutas son del template, ignorar.
     {
@@ -19,6 +21,12 @@ const routes = [
         name: 'index2',
         component: () => import(/* webpackChunkName: "index2" */ '../views/index2.vue'),
     },
+    {
+        path: '/products/:id',
+        name: 'ProductDetail',
+        component: Itemdetail,
+        props: true
+      },
 
     //components
     {
